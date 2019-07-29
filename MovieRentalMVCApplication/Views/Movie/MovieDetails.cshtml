@@ -1,0 +1,13 @@
+﻿@model MovieRentalMVCApplication.Models.Movie
+@{
+    ViewBag.Title = "MovieDetails";
+}
+
+<h2 class="heading">Movie Details</h2>
+    <p class="movie-content">@Model.MovieName</p>
+    <p class="movie-content">@Model.MovieGenre.GenreType</p>
+    <p class="movie-content">@Model.ReleaseDate.ToShortDateString()</p>
+    <p class="movie-content">@Model.DateAdded.ToShortDateString()</p>
+    <p class="movie-content">@Model.No_OfStock</p>
+   
+

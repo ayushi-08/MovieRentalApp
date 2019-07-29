@@ -1,0 +1,28 @@
+﻿@model MovieRentalMVCApplication.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Customer Details</h2>
+<table class="table table-bordered">\
+    <tr>
+        <th>Id</th>
+        <th>Customer Name</th>
+        <th>Is Subscribed To News Letter</th>
+        <th>Membership Id</th>
+        <th>Duration</th>
+        <th>Date of Birth</th>
+    </tr>
+    <tr>
+        <td>@Model.Id</td>
+        <td>@Model.Name</td>
+        <td>@Model.IsSubscribedToNewsLetter</td>
+        <td>@Model.MembershipTypeId</td>
+        <td>@Model.MembershipType.DurationInMonths</td>
+        <td>@Model.DOB</td>
+
+    </tr>
+    @*<input type="button" value="Edit Details" onclick="location.href='@Url.Action("CustomerForm", "Customer")'" />*@
+</table>
+

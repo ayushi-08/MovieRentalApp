@@ -1,0 +1,34 @@
+﻿@model MovieRentalMVCApplication.ViewModels.MovieViewModel
+@{
+    ViewBag.Title = "Movie Form";
+}
+
+<h2>MovieForm</h2>
+@using (Html.BeginForm("Save", "Movie"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movie.MovieName)
+        @Html.TextBoxFor(m => m.Movie.MovieName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movie.ReleaseDate)
+        @Html.TextBoxFor(m => m.Movie.ReleaseDate, "{0:d-MMM-yyyy}", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movie.DateAdded)
+        @Html.TextBoxFor(m => m.Movie.DateAdded, "{0:d-MMM-yyyy}", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movie.No_OfStock)
+        @Html.TextBoxFor(m => m.Movie.No_OfStock, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movie.MovieGenre.GenreType)
+        @Html.TextBoxFor(m => m.Movie.MovieGenre.GenreType, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Movie.Id)
+    <button class="btn btn-primary" type="submit">Save</button>
+
+}
+
